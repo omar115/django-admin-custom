@@ -24,6 +24,18 @@ class ProductListApiView(ListAPIView):
     serializer_class = ProductSerializer
 
 
+'''
+note:
+updateapiview will allow both PUT and PATCH request.
+PUT: you have to provide full body info of the object, then you can specify which
+value you need to update
+PATCH: better than PUT bcoz you just need to give the value to update of the object
+
+to create url you need to provide the object id number.
+such as: api/products/update/<id of product>/
+
+'''
+
 class ProductUpdateView(UpdateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
